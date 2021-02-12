@@ -1,21 +1,26 @@
 import React from 'react';
+import pawPrintSvg from './../img/paw.svg';
+import petSvg from "./../img/pet-care.svg";
+import homeSvg from "./../img/home.svg";
 
-function Header () {
+function Header (props) {
+  const { homeButtonClick, aboutButtonClick, browseButtonClick, findSheltersButtonClick, loginRegisterButtonClick } = props;
   return (
     <React.Fragment>
       <div className="center-align title">
-        {/* <img src="./../../public/paw.svg"></img> */}
+        <img className="pawSvg1" src={pawPrintSvg}></img>
+        <img className="pawSvg2" src={petSvg}></img>
         <h1>PawPal</h1>
-        <h2>find pets for adoption in your area</h2>
+        <h2>Find Adoptable Pets in Your Area</h2>
       </div>
       <div className="center-align navBar">
         {/* Each navbar item will have an onClick function connected to a prop function that was passed down from PawPal.js. These will change the state to display the proper page. */}
         <ul>
-          <li>home</li>
-          <li>about</li>
-          <li>browse</li>
-          <li>find local shelters</li>
-          <li>login + register</li>
+          <li className="hoverItem1"><img className="homeSvg" src={homeSvg}></img></li>
+          <li className="hoverItem1">About</li>
+          <li className="hoverItem1">Browse</li>
+          <li className="hoverItem1">Find Local Shelters</li>
+          <li className="hoverItem1">Login + Register</li>
         </ul>
       </div>
     </React.Fragment>
