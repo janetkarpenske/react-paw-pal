@@ -1,6 +1,10 @@
 import React from "react";
 import Header from "./Header";
+import HomePage from "./HomePage";
+import AboutPage from "./AboutPage";
 import PetList from "./PetList";
+import FindSheltersPage from "./FindSheltersPage";
+import LoginRegister from "./LoginRegister";
 
 
 class PawPal extends React.Component {
@@ -16,6 +20,7 @@ class PawPal extends React.Component {
 }
 
 handleHomeButtonClick = () => {
+  console.log("Home clicked")
   this.setState({
     homePageShowing: true,
     aboutPageShowing: false,
@@ -25,6 +30,7 @@ handleHomeButtonClick = () => {
   })
 }
 handleAboutButtonClick = () => {
+  console.log("About clicked")
   this.setState({
     homePageShowing: false,
     aboutPageShowing: true,
@@ -34,6 +40,7 @@ handleAboutButtonClick = () => {
   })
 }
 handleBrowseButtonClick = () => {
+  console.log("Browse clicked")
   this.setState({
     homePageShowing: false,
     aboutPageShowing: false,
@@ -43,6 +50,7 @@ handleBrowseButtonClick = () => {
   })
 }
 handleFindSheltersButtonClick = () => {
+  console.log("Find Local Shelters clicked")
   this.setState({
     homePageShowing: false,
     aboutPageShowing: false,
@@ -52,6 +60,7 @@ handleFindSheltersButtonClick = () => {
   })
 }
 handleLoginRegisterButtonClick = () => {
+  console.log("Login/Register clicked")
   this.setState({
     homePageShowing: false,
     aboutPageShowing: false,
@@ -69,6 +78,23 @@ rotateDisplayImages = () => { //This function should be called when the homePage
 }
 
 render () {
+  let currentlyVisiblePage = null;
+  if (this.state.aboutPageShowing) {
+    currentlyVisiblePage = <AboutPage />;
+  }
+  else if (this.state.browsePageShowing) {
+    currentlyVisiblePage = <PetList petList={{petName: "Albert", breed: "Dog", price: 12}}/>;
+  }
+  else if (this.state.findSheltersShowing) {
+    currentlyVisiblePage = <FindSheltersPage />;
+  }
+  else if (this.state.loginRegisterShowing) {
+    currentlyVisiblePage = <LoginRegister />;
+  }
+  else {
+    currentlyVisiblePage =  <HomePage />;
+  }
+
   return ( 
     <React.Fragment>
       <Header 
@@ -80,19 +106,8 @@ render () {
       />
 
       <div className="container-fluid">
-        <div className="row">
-          <div className="col-md-6 center-align">
-            <h1>Adoptable Dogs</h1>
-            <hr></hr>
-            <img className="homePageImg" src="https://images.pexels.com/photos/2820134/pexels-photo-2820134.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"></img>
-          </div>
-          <div className="col-md-6 center-align">
-            <h1>Adoptable Cats</h1>
-            <hr></hr>
-            <img className="homePageImg" src="https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=700"></img>
-          </div>
-        </div>
-        
+        {currentlyVisiblePage}
+
       </div>
     </React.Fragment>
   );

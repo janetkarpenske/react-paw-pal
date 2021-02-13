@@ -20,9 +20,9 @@ function PetList(props){
   );
 }
 
-PetList.propTypes = {
-  petList: PropTypes.object,
-  onPetSelection: PropTypes.func
-};
+// PetList.propTypes = {
+//   petList: PropTypes.object,
+//   onPetSelection: PropTypes.func
+// };
 
 export default PetList;

@@ -16,11 +16,11 @@ function Header (props) {
       <div className="center-align navBar">
         {/* Each navbar item will have an onClick function connected to a prop function that was passed down from PawPal.js. These will change the state to display the proper page. */}
         <ul>
-          <li className="hoverItem1"><img className="homeSvg" src={homeSvg}></img></li>
-          <li className="hoverItem1">About</li>
-          <li className="hoverItem1">Browse</li>
-          <li className="hoverItem1">Find Local Shelters</li>
-          <li className="hoverItem1">Login + Register</li>
+          <li className="hoverItem1" onClick={ () => homeButtonClick()}><img className="homeSvg" src={homeSvg}></img></li>
+          <li className="hoverItem1" onClick={ () => aboutButtonClick()}>About</li>
+          <li className="hoverItem1" onClick={ () => browseButtonClick()}>Browse</li>
+          <li className="hoverItem1" onClick={ () => findSheltersButtonClick()}>Find Local Shelters</li>
+          <li className="hoverItem1" onClick={ () => loginRegisterButtonClick()}>Login + Register</li>
         </ul>
       </div>
     </React.Fragment>
