@@ -3,16 +3,19 @@ import Pet from './Pet';
 import PropTypes from 'prop-types';
 
 function PetList(props){
+  const { petList, onPetSelection } = props;
   return (
     <React.Fragment>
       <h2 className="center-align">adoptable pets</h2>
       <hr/>
-      {Object.values(props.petList).map((pet) =>
+      {petList.map((pet) =>
         <Pet
-        whenKegIsClicked = { props.onKegSelection }
-        name={pet.petName}
-        brand={pet.breed}
+        whenPetIsClicked = { onPetSelection }
+        petName={pet.petName}
+        breed={pet.breed}
         price={pet.price}
+        image={pet.image}
+        description={pet.description}
         id={pet.id}
         key={pet.id}/>
       )}
