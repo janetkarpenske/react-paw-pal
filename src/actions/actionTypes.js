@@ -8,3 +8,8 @@
 // export const SET_TASK_LIST = 'SET_TASK_LIST';
 
 export const FETCH_PET_LIST = 'FETCH_PET_LIST';
+export const SET_PET_LIST = 'SET_PET_LIST';
+export const SELECT_PET = 'SELECT_PET';
+export const SET_PET_NULL = 'SET_PET_NULL';
+export const TOGGLE_EDIT = 'TOGGLE_EDIT';
+export const TOGGLE_FORM = 'TOGGLE_FORM';

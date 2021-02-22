@@ -1,7 +1,7 @@
 import { call, put, takeEvery, takeLatest, all } from 'redux-saga/effects'
-import {firebase} from './firebase';
+import {firebaseInst} from './firebase';
 import * as c from './actions/actionTypes';
-import * as actions from './actions/Index';
+import * as actions from './actions/actions';
 
 
 
@@ -27,7 +27,7 @@ import * as actions from './actions/Index';
 // }
 function* fetchPetList() {
   console.log("WE in fetchTaskList")
-  let petListRef = firebase.firestore.collection('petListings')
+  let petListRef = firebaseInst.firestore.collection('petListings')
   //let taskListRef = firebaseInst.get({collection: 'tasks', doc: id})
   let petListQuery = yield call(
     {

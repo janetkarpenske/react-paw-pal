@@ -4,6 +4,11 @@ export const fetchPetList = () => ({
   type: c.FETCH_PET_LIST
 })
 
+export const setPetList = (petList) => ({
+  type: c.SET_PET_LIST,
+  petList
+})
+
 // export const deletePet = id => ({
 //   type: 'DELETE_PET',
 //   id
