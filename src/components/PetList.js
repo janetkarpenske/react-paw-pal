@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 
 function PetList(props){
   const { petList, onPetSelection } = props;
+  console.log(petList)
   return (
     <React.Fragment>
       <h2 className="center-align">adoptable pets</h2>
       <hr/>
-      {petList.map((pet) =>
+      {petList.pets.map((pet) => //petList is an object with an array of pets in it
         <Pet
         whenPetIsClicked = { onPetSelection }
         petName={pet.petName}
@@ -23,9 +24,9 @@ function PetList(props){
   );
 }
 
-// PetList.propTypes = {
-//   petList: PropTypes.object,
-//   onPetSelection: PropTypes.func
-// };
+PetList.propTypes = {
+  petList: PropTypes.object,
+  onPetSelection: PropTypes.func
+};
 
 export default PetList;

@@ -1,5 +1,11 @@
 import * as c from './actionTypes';
 
+//export const INITIAL_ACTION = 'INITIAL_ACTION';
+
+export const initialAction = ({
+  type: c.INITIAL_ACTION
+})
+
 export const fetchPetList = () => ({
   type: c.FETCH_PET_LIST
 })

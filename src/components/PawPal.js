@@ -10,6 +10,7 @@ import LoginRegister from "./LoginRegister";
 import PetDetails from "./PetDetails";
 import { connect } from 'react-redux';
 import * as a from './../actions/actions.js';
+import { withFirestore } from 'react-redux-firebase';
 
 
 class PawPal extends React.Component {
@@ -21,7 +22,7 @@ class PawPal extends React.Component {
       browsePageShowing: false,
       findSheltersShowing: false,
       loginRegisterShowing: false,
-      selectedPet: null
+      //selectedPet: null
     };
 }
 handleSelectingPet = (id) => {
@@ -96,7 +97,11 @@ render () {
     currentlyVisiblePage = <AboutPage />;
   }
   else if (this.state.browsePageShowing) {
-    currentlyVisiblePage = <PetList petList={[{petName: "Albert", breed: "Dog", price: 12, image: "https://images.pexels.com/photos/4681107/pexels-photo-4681107.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", description: "Albert is a furry little fuzzball who likes chasing his frisbee and leaving skidmarks across carpets. He is for adoption because he smells like a large poo.", id: "1"}]} onPetSelection={this.handleSelectingPet}/>;
+    currentlyVisiblePage = <PetList 
+    // petList={[{petName: "Albert", breed: "Dog", price: 12, image: "https://images.pexels.com/photos/4681107/pexels-photo-4681107.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", description: "Albert is a furry little fuzzball who likes chasing his frisbee and leaving skidmarks across carpets. He is for adoption because he smells like a large poo.", id: "1"}]} 
+    
+    petList={this.props.masterPetList}
+    onPetSelection={this.handleSelectingPet}/>;
   }
   else if (this.state.findSheltersShowing) {
     currentlyVisiblePage = <FindSheltersPage />;
@@ -127,4 +132,17 @@ render () {
 }
 }
 
-export default PawPal;
+const mapStateToProps = state => {
+  return {
+    masterPetList: state.masterPetList,
+    formVisibleOnPage: state.formVisibleOnPage,
+    editing: state.editing,
+    selectedPet: state.selectedPet
+  }
+}
+
+PawPal = connect(mapStateToProps)(PawPal);
+
+export default withFirestore(PawPal);
+
+// export default PawPal;
