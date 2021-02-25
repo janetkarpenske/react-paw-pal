@@ -10,8 +10,8 @@ function Pet (props) {
           <img className="petDetailImg" src={props.image}></img>
         </div>
           <div className="col-md-6">
-        <h4><strong>{props.petName}</strong></h4>
-        <h5>{props.price}</h5> 
+        <h4>Name: <strong>{props.petName}</strong></h4>
+        <h5>Adoption Fee: ${props.price}</h5> 
         <h5>Breed: {props.breed}</h5> 
         <h5>Description: {props.description}</h5> 
         </div>

@@ -5,7 +5,7 @@ function AboutPage (props) {
   return (
     <React.Fragment>
       <div className="center-align">
-        <div className="row">
+        <div className="row aboutRow">
           <div className="col-md-6">
             <h1>About</h1>
             <h4>There are lots of reasons someone might have to place a beloved pet up for adoption. Whether you no longer have the means to care for your pet, are too busy, or have been unable to get your pet comfortable in your home, you deserve support and your pet deserves his/her best chance at moving on to a new, loving home. Through whatever challenges you might be facing, PawPal is here to help make the journey a little easier. </h4>
@@ -17,9 +17,9 @@ function AboutPage (props) {
             
           </div>
         </div>
-        <br/>
 
-        <div className="row">
+
+        <div className="row aboutRow">
           <div className="col-md-6">
           <img src="https://images.pexels.com/photos/1056251/pexels-photo-1056251.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="dog pic"></img>
           </div>
@@ -29,7 +29,7 @@ function AboutPage (props) {
           </div>
         </div>
 
-        <div className="row">
+        <div className="row aboutRow">
           <div className="col-md-6">
             <h1>Why Adopt Over Buying From A Breeder?</h1>
             <h4>There are lots of reasons someone might have to place a beloved pet up for adoption. Whether you no longer have the means to care for your pet, are too busy, or have been unable to get your pet comfortable in your home, you deserve support and your pet deserves his/her best chance at moving on to a new, loving home. Through whatever challenges you might be facing, PawPal is here to help make the journey a little easier. </h4>

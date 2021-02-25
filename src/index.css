@@ -69,3 +69,10 @@ body{
   height: 400px;
   object-fit: cover;
 }
+.aboutRow {
+  border: solid black;
+  border-width: 1px;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 40px;
+}
