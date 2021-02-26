@@ -76,3 +76,7 @@ body{
   padding: 20px;
   margin-bottom: 40px;
 }
+.hoverItem:hover {
+  cursor: pointer;
+  background-color: rgb(235, 232, 227);
+}

@@ -34,6 +34,12 @@ handleSelectingPet = (id) => {
   //   selectedPet:
   // })
 }
+handleAddPetButtonClicked = () => {
+  console.log("Add pet reached!")
+  // const { dispatch } = this.props;
+  // let action = a.toggleForm();
+  // dispatch(action);
+}
 handleHomeButtonClick = () => {
   console.log("Home clicked")
   this.setState({
@@ -101,7 +107,8 @@ render () {
     // petList={[{petName: "Albert", breed: "Dog", price: 12, image: "https://images.pexels.com/photos/4681107/pexels-photo-4681107.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", description: "Albert is a furry little fuzzball who likes chasing his frisbee and leaving skidmarks across carpets. He is for adoption because he smells like a large poo.", id: "1"}]} 
     
     petList={this.props.masterPetList}
-    onPetSelection={this.handleSelectingPet}/>;
+    onPetSelection={this.handleSelectingPet}
+    onAddNewPetButtonClicked={this.handleAddPetButtonClicked}/>;
   }
   else if (this.state.findSheltersShowing) {
     currentlyVisiblePage = <FindSheltersPage />;
