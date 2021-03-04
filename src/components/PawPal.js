@@ -26,10 +26,10 @@ class PawPal extends React.Component {
     };
 }
 handleSelectingPet = (id) => {
-  console.log("Select function reached in pawPal.js") //use id to find matching id in array of pets in props and set selectedPet state slice to object.
-  // const { dispatch } = this.props;
-  // const action = a.selectPet(id)
-  // dispatch(action);
+  console.log("Select function reached in pawPal.js", id) //use id to find matching id in array of pets in props and set selectedPet state slice to object.
+  const { dispatch } = this.props;
+  const action = a.selectPet(id)
+  dispatch(action);
   // this.setState({
   //   selectedPet:
   // })
