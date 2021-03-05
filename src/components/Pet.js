@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Pet (props) {
   return (
     <React.Fragment>
-      <div className="hoverItem" onClick = {() => props.whenPetIsClicked(props.id, props.petName, props.price, props.breed, props.description)}> 
+      <div className="hoverItem" onClick = {() => props.whenPetIsClicked(props.id, props.petName, props.price, props.breed, props.description, props.image)}> 
       <div className="row">
         <div className="col-md-6 center-align">
           <img className="petDetailImg" src={props.image}></img>
