@@ -15,9 +15,9 @@ export const setPetList = (petList) => ({
   petList
 })
 
-export const selectPet = (id) => ({
+export const selectPet = (id, petName, price, breed, description) => ({
   type: c.SELECT_PET,
-  id
+  id, petName, price, breed, description
 })
 
 // export const deletePet = id => ({

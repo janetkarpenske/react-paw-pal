@@ -25,10 +25,10 @@ class PawPal extends React.Component {
       //selectedPet: null
     };
 }
-handleSelectingPet = (id) => {
-  console.log("Select function reached in pawPal.js", id) //use id to find matching id in array of pets in props and set selectedPet state slice to object.
+handleSelectingPet = (id, petName, price, breed, description) => {
+  console.log("Select function reached in pawPal.js", id, petName, price, breed, description) //use id to find matching id in array of pets in props and set selectedPet state slice to object.
   const { dispatch } = this.props;
-  const action = a.selectPet(id)
+  const action = a.selectPet(id, petName, price, breed, description)
   dispatch(action);
   // this.setState({
   //   selectedPet:
@@ -96,8 +96,8 @@ rotateDisplayImages = () => { //This function should be called when the homePage
 
 render () {
   let currentlyVisiblePage = null;
-  if (this.state.selectedPet != null) {
-    currentlyVisiblePage = <PetDetails pet={this.state.selectedPet} />
+  if (this.props.selectedPet != null) {
+    currentlyVisiblePage = <PetDetails pet={this.props.selectedPet} />
   }
   else if (this.state.aboutPageShowing) {
     currentlyVisiblePage = <AboutPage />;
