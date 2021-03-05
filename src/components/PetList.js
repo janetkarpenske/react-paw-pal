@@ -9,7 +9,7 @@ function PetList(props){
     <React.Fragment>
       <h2 className="center-align">adoptable pets</h2>
       {/* <button onClick=() => {props.onAddNewPet()}>Add Pet</button> */}
-      <button className="btn btn-outline-dark btn-md" onClick={ () => onAddNewPetButtonClicked() }>Add Pet</button>
+      <button className="btn btn-outline-dark btn-md" onClick={ () => onAddNewPetButtonClicked() }>Post A Pet For Adoption</button>
       <hr/>
       {petList.pets.map((pet) => //petList is an object with an array of pets in it
         <Pet

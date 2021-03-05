@@ -86,4 +86,6 @@ body{
 }
 .form-control {
   width: 80%;
+  margin: auto;
+  margin-top: 4%;
 }

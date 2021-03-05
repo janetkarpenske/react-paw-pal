@@ -36,9 +36,12 @@ handleSelectingPet = (id, petName, price, breed, description, image) => {
 }
 handleAddPetButtonClicked = () => {
   console.log("Add pet reached!")
-  // const { dispatch } = this.props;
-  // let action = a.toggleForm();
-  // dispatch(action);
+  const { dispatch } = this.props;
+  let action = a.toggleForm();
+  dispatch(action);
+}
+handleAddingPet = (petObj) => {
+  console.log("Add this pet reached:", petObj)
 }
 handleHomeButtonClick = () => {
   console.log("Home clicked")
@@ -98,6 +101,11 @@ render () {
   let currentlyVisiblePage = null;
   if (this.props.selectedPet != null) {
     currentlyVisiblePage = <PetDetails pet={this.props.selectedPet} />
+  }
+  else if (this.props.formVisibleOnPage === true && this.props.selectPet != true) {
+    currentlyVisiblePage = <AddPetForm 
+    onNewPetCreation={this.handleAddingPet} 
+    />
   }
   else if (this.state.aboutPageShowing) {
     currentlyVisiblePage = <AboutPage />;

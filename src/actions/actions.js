@@ -20,6 +20,11 @@ export const selectPet = (id, petName, price, breed, description) => ({
   id, petName, price, breed, description
 })
 
+
+export const toggleForm = () => ({
+  type: c.TOGGLE_FORM
+})
+
 // export const deletePet = id => ({
 //   type: 'DELETE_PET',
 //   id

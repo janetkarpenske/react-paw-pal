@@ -5,11 +5,12 @@ function LoginRegister (props) {
   return (
     <React.Fragment>
       <div className="center-align">
-        <h1>Login/Register</h1>
-        <h2>Coming Soon!</h2>
+        <br></br>
+
         <div className="row">
         <div className="col-md-6">
           <div className="card">
+            <br></br>
             <h2>Login</h2>
             <form>
               <input className="form-control" type="text" placeholder="Email"></input>
@@ -19,6 +20,7 @@ function LoginRegister (props) {
         </div>
         <div className="col-md-6">
           <div className="card">
+          <br></br>
             <h2>Register</h2>
             <form>
               <input className="form-control" type="text" placeholder="Email"></input>
