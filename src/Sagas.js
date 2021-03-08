@@ -42,6 +42,11 @@ function* fetchPetList() {
   yield put(actions.setPetList(petList));
 }
 
+function* addPetToFirestore(action) {
+  console.log("In addPetToFirestore generator function:", action.petObj)
+
+}
+
 // function* deleteTaskFromDb(id) {
 //   //function should delete task from firestore. Get the new list from firestore, and then set the task list in store equal to to the new list.
 //   let taskListRef = firebaseInst.firestore.collection('tasks')
@@ -64,7 +69,7 @@ export function* mySagas() {
     //takeEvery(c.DELETE_TASK, deleteTaskFromDb),
     //takeEvery('TOGGLE_FORM', toggleFormAsync),
     //takeEvery('TOGGLE_EDIT', toggleEditAsync),
-    //takeEvery('SET_TASK_NULL', nullTaskAsync),
+    takeEvery('ADD_PET', addPetToFirestore),
     takeEvery(c.FETCH_PET_LIST, fetchPetList),
   ])
 }

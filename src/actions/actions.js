@@ -30,17 +30,13 @@ export const toggleForm = () => ({
 //   id
 // });
 
-// export const addPet = (pet) => {
-//   const { petName, breed, price, image, description } = pet;
-//   return {
-//     type: 'ADD_PET',
-//     petName,
-//     breed,
-//     price,
-//     image,
-//     description
-//   }
-// }
+export const addPet = (petObj) => ({
+  //const { petName, breed, price, image, description } = petObj;
+  //return {
+    type: 'ADD_PET',
+    petObj
+//  }
+})
 
 // export const editPet = (pet) => {
 //   const { petName, breed, price, image, description, id } = pet;

@@ -42,6 +42,9 @@ handleAddPetButtonClicked = () => {
 }
 handleAddingPet = (petObj) => {
   console.log("Add this pet reached:", petObj)
+  const { dispatch } = this.props;
+  let action = a.addPet(petObj);
+  dispatch(action);
 }
 handleHomeButtonClick = () => {
   console.log("Home clicked")
