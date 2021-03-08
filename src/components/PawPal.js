@@ -46,6 +46,11 @@ handleAddingPet = (petObj) => {
   let action = a.addPet(petObj);
   dispatch(action);
 }
+handleSettingPetNull = () => {
+  const { dispatch } = this.props;
+  let action = a.setPetNull();
+  dispatch(action);
+}
 handleHomeButtonClick = () => {
   console.log("Home clicked")
   this.setState({
@@ -103,7 +108,7 @@ rotateDisplayImages = () => { //This function should be called when the homePage
 render () {
   let currentlyVisiblePage = null;
   if (this.props.selectedPet != null) {
-    currentlyVisiblePage = <PetDetails pet={this.props.selectedPet} />
+    currentlyVisiblePage = <PetDetails pet={this.props.selectedPet} onBackButtonClicked={this.handleSettingPetNull}/>
   }
   else if (this.props.formVisibleOnPage === true && this.props.selectPet != true) {
     currentlyVisiblePage = <AddPetForm 

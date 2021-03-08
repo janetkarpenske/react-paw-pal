@@ -19,7 +19,9 @@ export const selectPet = (id, petName, price, breed, description) => ({
   type: c.SELECT_PET,
   id, petName, price, breed, description
 })
-
+export const setPetNull = () => ({
+  type: c.SET_PET_NULL
+})
 
 export const toggleForm = () => ({
   type: c.TOGGLE_FORM

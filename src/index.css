@@ -72,11 +72,16 @@ body{
 .aboutRow {
   border: solid black;
   border-width: 1px;
-  border-radius: 8px;
+  border-radius: 4px;
   padding: 20px;
   margin-bottom: 40px;
 }
+.hoverItem {
+  padding: 20px;
+  border-radius: 8px;
+}
 .hoverItem:hover {
+
   cursor: pointer;
   background-color: rgb(235, 232, 227);
 }
@@ -88,4 +93,8 @@ body{
   width: 80%;
   margin: auto;
   margin-top: 4%;
+}
+.backBtn {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
